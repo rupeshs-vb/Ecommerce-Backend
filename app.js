@@ -18,7 +18,7 @@ db.once("open", function () {
   console.log("Connected to Database");
 });
 
-const UserRouter = require("./routers/UserRouter");
+const UserRouter = require("./routes/UserRouter");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(UserRouter);
