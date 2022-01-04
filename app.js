@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 require("dotenv").config();
+const cookieParser = require("cookie-parser");
 const app = express();
 
 const port = 3000;
@@ -21,6 +22,7 @@ db.once("open", function () {
 const UserRouter = require("./routes/UserRouter");
 
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
 app.use(UserRouter);
 
 app.listen(port, () => {
