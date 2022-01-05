@@ -39,7 +39,11 @@ const loginUser = async (req, res) => {
       httpOnly: true,
     });
     if (isMatch) {
-      res.status(200).send("Welcome to Home Page");
+      res.status(200).send({
+        message: "Welcome to Home Page",
+        data: user,
+        token: token,
+      });
     } else {
       res.send("Invalid Login Details");
     }
