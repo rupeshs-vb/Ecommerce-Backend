@@ -22,6 +22,7 @@ db.once("open", function () {
 const UserRouter = require("./routes/UserRouter");
 
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.json({ extend: false }));
 app.use(cookieParser());
 app.use(UserRouter);
 
